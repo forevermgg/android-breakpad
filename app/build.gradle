@@ -4,7 +4,6 @@ plugins {
 }
 
 android {
-    ndkVersion "23.1.7779620"
 
     compileSdk 30
 
