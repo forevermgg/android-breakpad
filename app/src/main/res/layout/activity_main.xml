@@ -26,6 +26,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onClickNativeCrash"
-        android:text="native crash"/>
+        android:text="inner native crash"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickNativeCrash2"
+        android:text="external native crash"/>
 
 </LinearLayout>

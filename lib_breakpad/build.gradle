@@ -17,12 +17,13 @@ android {
         consumerProguardFiles "consumer-rules.pro"
         externalNativeBuild {
             cmake {
-                cppFlags "-std=c++11 -D__STDC_LIMIT_MACROS" //抄自breakpad\android\sample_app\jni\Application.mk
+                cppFlags "-std=c++11 -D__STDC_LIMIT_MACROS"
+                //抄自breakpad\android\sample_app\jni\Application.mk
             }
         }
-        ndk {
-            abiFilters "arm64-v8a" //如果指定为armeabi-v7a则会报error: use of undeclared identifier 'sys_mmap'的问题
-        }
+//        ndk {
+//            abiFilters "armeabi-v7a","arm64-v8a" //可以在此指定想要的abi:armeabi-v7a arm64-v8a
+//        }
     }
 
     buildTypes {
