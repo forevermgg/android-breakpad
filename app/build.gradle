@@ -15,15 +15,18 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a" //可以在此指定想要的abi:armeabi-v7a arm64-v8a
+        }
     }
+
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"
             version "3.10.2"
         }
     }
-
-
 
     buildTypes {
         release {
@@ -51,5 +54,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation project(':lib_breakpad')
+//    implementation project(':lib_breakpad')
+    implementation 'com.gitee.hijunmeng:android-breakpad:0.0.2'
 }
