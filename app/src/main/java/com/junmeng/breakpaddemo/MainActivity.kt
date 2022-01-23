@@ -3,6 +3,7 @@ package com.junmeng.breakpaddemo
 import android.Manifest
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.junmeng.breakpaddemo.jni.NativeCrashDemo
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     fun onClickInit(view: View) {
         val path = externalCacheDir?.absolutePath ?: ""
+        findViewById<TextView>(R.id.filePath).text = "日志存储路径：$path"
         mBreakPad?.init(path, BuildConfig.DEBUG)
     }
 
