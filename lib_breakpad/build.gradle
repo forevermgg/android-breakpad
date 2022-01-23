@@ -18,8 +18,7 @@ android {
         consumerProguardFiles "consumer-rules.pro"
         externalNativeBuild {
             cmake {
-                cppFlags "-std=c++11 -D__STDC_LIMIT_MACROS"
-                //抄自breakpad\android\sample_app\jni\Application.mk
+                cppFlags "-std=c++11 -D__STDC_LIMIT_MACROS" //抄自breakpad\android\sample_app\jni\Application.mk
             }
         }
 //        ndk {
