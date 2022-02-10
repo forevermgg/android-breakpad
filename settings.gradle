@@ -10,3 +10,4 @@ dependencyResolutionManagement {
 rootProject.name = "android-breakpad"
 include ':app'
 include ':lib_breakpad'
+include ':lib_stackwalk'

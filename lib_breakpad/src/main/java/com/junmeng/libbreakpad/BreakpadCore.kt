@@ -1,11 +1,15 @@
 package com.junmeng.libbreakpad
 
+import androidx.annotation.Keep
+
+@Keep
 class BreakpadCore {
     companion object {
         init {
             System.loadLibrary("breakpad")
         }
     }
+
 
     /**
      * 初始化
@@ -24,5 +28,6 @@ class BreakpadCore {
      * 产生奔溃，测试用
      */
     external fun testNativeCrash()
+
 
 }

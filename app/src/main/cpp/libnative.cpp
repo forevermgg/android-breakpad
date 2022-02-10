@@ -1,5 +1,4 @@
 #include <jni.h>
-#include <jni.h>
 
 void Crash() {
     volatile int *a = reinterpret_cast<volatile int *>(NULL);
