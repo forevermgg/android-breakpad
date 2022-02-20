@@ -8,13 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.junmeng.breakpaddemo.jni.NativeCrashDemo
 import com.junmeng.libbreakpad.BreakpadCore
+import com.junmeng.libbreakpad.BreakpadUtil
 
 class MainActivity : AppCompatActivity() {
-    private var mBreakPad: BreakpadCore? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mBreakPad = BreakpadCore()
     }
 
     fun onClickPermission(view: View) {
@@ -28,18 +27,18 @@ class MainActivity : AppCompatActivity() {
     fun onClickInit(view: View) {
         val path = externalCacheDir?.absolutePath ?: ""
         findViewById<TextView>(R.id.filePath).text = "日志存储路径：$path"
-        mBreakPad?.init(path, BuildConfig.DEBUG)
+        BreakpadUtil.init("$path/crash", BuildConfig.DEBUG)
     }
 
     fun onClickUninit(view: View) {
-        mBreakPad?.uninit()
+        BreakpadUtil.uninit()
     }
 
     /**
      * 验证breakpad内部奔溃能否成功dump
      */
     fun onClickNativeCrash(view: View) {
-        mBreakPad?.testNativeCrash()
+        BreakpadUtil.testNativeCrash()
     }
 
     /**

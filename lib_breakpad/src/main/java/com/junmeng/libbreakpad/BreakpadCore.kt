@@ -10,7 +10,6 @@ class BreakpadCore {
         }
     }
 
-
     /**
      * 初始化
      */
@@ -28,6 +27,4 @@ class BreakpadCore {
      * 产生奔溃，测试用
      */
     external fun testNativeCrash()
-
-
 }
